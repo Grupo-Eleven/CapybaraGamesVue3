@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --dark-green: #4a7337;
+    --light-green: #80af6a;
+    --beige: #ddd48f;
+    --light-brown: #cda989;
+    --dark-brown: #462e1b;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Orbitron';
+    font-weight: 400;
+    letter-spacing: 1.1px;
+}
+
+body{
+    margin: 0;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--dark-brown);
+    color: var(--light-brown);
+}
+
+main {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 95vw;
+    justify-content: center;
+    animation: fadeIn 1s;
+}
+
+p {
+    color: var(--beige);
+}
+
+header h1 { 
+    text-shadow: #000000 4px 4px 12px;
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--light-brown);
+    border:groove var(--light-brown);
+    border-top:none;
+    border-radius: 3.5px;
+    border-left:none;
+    box-shadow: var(--light-brown) 10px 10px 15px -12px;
+    margin: 0px 25px;
+    padding-right: 12px;
+    padding-left: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+main h2 { 
+    font-weight: 600;
+    font-size: 28px;
+}
+
+main h3 { 
+    text-align: start;
+    width: 100%;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+footer {
+    margin-top: 75px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-green);
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Chakra Petch';
+    margin: 6px 0 ;
+}
+
+form {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+}
+
+form label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+form label ul li {
+    list-style: none;
+    display: flex;
+}
+
+nav {
+    margin: 25px 0;
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0px 15px;
+}
+
+nav ul li a:hover {
+    color: var(--beige);
+}
+
+aside ul {
+    display: block;
+    text-align: start;
+}
+
+aside ul li {
+    margin: 15px 0px;
+    list-style: none;    
+}
+
+ol {
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-green);
+    font-family: 'Chakra Petch';
+    letter-spacing: 1.1px;
+    font-size: 20px;
+}
+
+/* GALERA */
+
+.galery{
+    display: flex;
+    width: 90vw;
+    min-width: 200px;
+    height: 10vw;
+    justify-content: center;
+    align-items: center;
+    margin: 7vh 0;
+}
+.galery a {
+    display: flex;
+    margin: 0 10px;
+}
+.galery a, .galery a img{
+    width: 0px;
+    height: 10vw;
+    border-radius: 10px;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+    filter: brightness(100%);
+    max-width: 470px;
+    max-height: 280px;
+}
+.galery:hover a img{
+    filter: brightness(30%);
+}
+.galery a:hover, .galery a img:hover{
+    cursor: pointer;
+    width: 30vw;
+    height: 25vw;
+    filter: brightness(100%);
+    z-index: 1;
+}
+
+/* SLIDER */
+
+.slider {
+    aspect-ratio: 16/10;
+    position: relative;
+    display: none;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+.slider a{
+    margin: 0 0;
+    width: 90%;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 5px;
+    scroll-snap-align: start;
+}
+
+.slider img {
+    width: 90vw;
+    height: 100%;
+    left: 0;
+    position: sticky;
+}
+
+.newgame-form ul {
+    padding:0 0;
+    list-style: none;
+    text-align: start;
+    margin: 0 0;
+    width: 100%;
+    height: 130px;
+    margin-bottom: 7px;
+}
+
+.newgame-form ul li {
+    display: flex;
+    padding: 5px 0;
+}
+
+.newgame-form label {
+    display: block;
+    width: 50px;
+}
+
+.newgame-form .submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.newgame-form .submit-button .submit-label-button {
+    background-color: var(--dark-brown);
+    border: solid var(--light-brown);
+    border-radius:8px ;
+    color: var(--dark-green);
+    text-align: center;
+    width: 100px;
+    margin-top: 25px;
+}
+
+.contact-form {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.game-list{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, 18%);
+    gap: 60px 30px;
+}
+
+.game-list li {
+    list-style: none;
+}
+
+.game-list a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 10vw;
+}
+
+.game-list img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.game-list p {
+    display: block;
+    text-overflow: ellipsis ;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'Chakra Petch';
+    letter-spacing: 1.1px;
+    font-size: 19px;
+    max-width: 100%;
+}
+
+.add-new a{
+    border: var(--light-brown) dashed 7px;
+    border-radius: 20px;
+}
+
+.add-new div {
+    height: 43%;
+}
+
+.add-new p {
+    color: var(--light-brown);
+}
+
+.add-new a:hover {
+    border-color: white;
+}
+.add-new a:hover p {
+    color: white;
+}
+
+/* PAGINA DE VIDEOJUEGO */
+
+.details-videogame .details-img {
+    display: flex;
+}
+
+.details-videogame .details-img img {
+    width: 50vw;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.details-videogame .details-info {
+    width: 50vw;
+    text-align: start;
+    margin-left: 20px;
+}
+
+.details-videogame .details-info p, .details-videogame .details-info a {
+    margin: 0 0;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.details-videogame .details-info h3 {
+    margin: 10px 0;
+}
+
+.details-videogame .details-description {
+    text-align: start;
+    margin-left: 10px;
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ----------- */
+
+/* MEDIA QUERIES */
+
+/* MOBILE */
+@media screen and (max-width: 699px) {
+    header h1 {
+        font-size: 7vw;
+    }
+    .game-list {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+
+    .game-list a {
+        height: 50vw;
+    }
+
+    .game-list p {
+        font-size: 26px;
+    }
+
+    .galery {
+        display: none;
+    }
+
+    .slider {
+        display: flex;
+    }
+
+    .details-videogame .details-img {
+        display: block;
+    }
+
+    .details-videogame .details-img img {
+        width: 85vw;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .details-videogame .details-info p, .details-videogame .details-info a {
+        margin: 0 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 700px) and (max-width: 1066px) {
+    .game-list {
+        grid-template-columns: repeat(auto-fit, 45%);
+    }
+
+    .game-list a {
+        height: 25vw;
+    }
+
+    .game-list p {
+        font-size: 22px;
+    }
+}
+
+/* DESKTOP SMALL */
+@media screen and (min-width: 1067px) and (max-width: 1433px) {
+    .game-list {
+        grid-template-columns: repeat(auto-fit, 30%);
+    }
+
+    .game-list a {
+        height: 16vw;
+    }
+}
+
+/* DESKTOP MEDIUM */
+@media screen and (min-width: 1434px) and (max-width: 1799px) {
+    .game-list {
+        grid-template-columns: repeat(auto-fit, 22%);
+    }
+
+    .game-list a {
+        height: 12vw;
+    }
+}
+
+/* MOBILE ASIDE */
+
+@media screen and (max-width: 466px) {
+    header div {
+        display: flex;
+        align-items: center;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header aside {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* PC NAVBAR */
+
+@media screen and (min-width: 467px) {
+    header h1 {
+        margin: 10px auto;
+        padding-bottom: 12px;
+        width: 510px;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    header aside {
+        display: none;
+    }
+
+    #aside-button {
+        display: none;
+    }
+}
+/* ------------- */
+
+/* Imagenes de miniatura estan mal, se estan usando imagenes pesadas modificandole el tamaño, Thumb
+
+Seguir viendo temas de diseño
+
+*/
