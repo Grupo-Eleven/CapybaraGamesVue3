@@ -45,7 +45,7 @@
 <script setup>
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
-    import { onBeforeMount } from "vue";
+    import { nextTick, onBeforeMount } from "vue";
     import { useRoute } from "vue-router";
 
     const games = useGamesStore()
@@ -56,6 +56,7 @@
 
     onBeforeMount(() => {
         getGame(route.params.id)
+        nextTick()
     })
 </script>
 
