@@ -1,20 +1,7 @@
 <template>
     <header>
         <router-link :to="{ name: 'index' }"><h1>Capybara Games</h1></router-link>
-        <nav>
-            <ul>
-                <li><router-link :to="{ name: 'index' }">Home</router-link></li>
-                <li><router-link :to="{ name: 'videogames-list' }">Lista de Videojuegoss</router-link></li>
-                <li><router-link :to="{ name: 'contact' }">Contacto</router-link></li>
-            </ul>
-        </nav>
-        <aside id="aside">
-            <ul>
-                <li><router-link :to="{ name: 'index' }">Home</router-link></li>
-                <li><router-link :to="{ name: 'videogames-list' }">Lista de Videojuegoss</router-link></li>
-                <li><router-link :to="{ name: 'contact' }">Contacto</router-link></li>
-            </ul>
-        </aside>
+        <NavAside />
     </header>
     <main>
         <h2>Lista de videojuegos</h2>
@@ -28,14 +15,12 @@
             </li>
         </ol>
     </main>
-    <footer>
-        <p>Derechos de autor © 2024 CapybaraGames</p>
-        <p>Contáctanos en info@capybaragames.com</p>
-
-    </footer>
+    <FooterComp />
 </template>
 
 <script setup>
+    import NavAside from '../components/NavAside.vue'
+    import FooterComp from '../components/FooterComp.vue'
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
 
