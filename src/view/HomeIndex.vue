@@ -1,18 +1,18 @@
 <template>
     <header>
-        <a href="index.html"><h1>Capybara Games</h1></a>
+        <router-link :to="{ name: 'index' }"><h1>Capybara Games</h1></router-link>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="videogames-list.html">Lista de Videojuegos</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><router-link :to="{ name: 'index' }">Home</router-link></li>
+                <li><router-link :to="{ name: 'videogames-list' }">Lista de Videojuegoss</router-link></li>
+                <li><router-link :to="{ name: 'contact' }">Contacto</router-link></li>
             </ul>
         </nav>
         <aside id="aside">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="videogames-list.html">Lista de Videojuegos</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><router-link :to="{ name: 'index' }">Home</router-link></li>
+                <li><router-link :to="{ name: 'videogames-list' }">Lista de Videojuegoss</router-link></li>
+                <li><router-link :to="{ name: 'contact' }">Contacto</router-link></li>
             </ul>
         </aside>
     </header>

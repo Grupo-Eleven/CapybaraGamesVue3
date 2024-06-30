@@ -1,9 +1,9 @@
 <template>
-  <HomeIndex />
+  <router-view></router-view>
 </template>
 
 <script setup>
-  import HomeIndex from './view/HomeIndex.vue'
+
 </script>
 
 <style>
