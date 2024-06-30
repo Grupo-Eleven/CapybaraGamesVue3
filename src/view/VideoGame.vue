@@ -46,13 +46,16 @@
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
     import { onBeforeMount } from "vue";
+    import { useRoute } from "vue-router";
 
     const games = useGamesStore()
     const { actual_game } = storeToRefs(games)
     const { getGame } = games
 
+    const route = useRoute()
+
     onBeforeMount(() => {
-        getGame()
+        getGame(route.params.id)
     })
 </script>
 
