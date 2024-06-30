@@ -23,7 +23,7 @@ export const useGamesStore = defineStore('games', () => {
 
     const getGame = async (id) => {
         try {
-            const response = axios.get(`${url}/api/game/${id}`)
+            const response = await axios.get(`${url}/api/game/${id}`)
             console.log(response)
             actual_game.value = response.data
         } catch (error) {
