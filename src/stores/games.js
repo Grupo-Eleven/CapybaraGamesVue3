@@ -8,6 +8,8 @@ const url = 'https://a12bba12-b258-4707-b64c-9719a13b2b47-00-3d7rffcg997ll.kirk.
 
 const games_list = ref([])
 
+const actual_game = ref()
+
 export const useGamesStore = defineStore('games', () => {
     const getGames = async () => {
         try {
@@ -18,7 +20,16 @@ export const useGamesStore = defineStore('games', () => {
             console.log(error)
         }
     }
-    getGames()
 
-    return { url, getGames, games_list }
+    const getGame = async (id) => {
+        try {
+            const response = axios.get(`${url}/api/game/${id}`)
+            console.log(response)
+            actual_game.value = response.data
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    return { url, getGames, getGame, games_list, actual_game }
 })

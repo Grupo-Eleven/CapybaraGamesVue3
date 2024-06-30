@@ -16,23 +16,23 @@
             </ul>
         </aside>
     </header>
-    <main>
-        <h2>Celeste</h2>
+    <main v-if="actual_game">
+        <h2>{{ actual_game.nombre }}</h2>
         <article class="details-videogame">
             <div class="details-img">
                 <img src="/img/celeste_logo.png" alt="">
                 <div class="details-info">
                     <h3>Categoría:</h3>
-                    <p>Plataformas</p>
+                    <p>{{ actual_game.categoria }}</p>
                     <h3>Plataforma:</h3>
-                    <p>Escritorio</p>
+                    <p>{{ actual_game.plataforma }}</p>
                     <h3>Trailer:</h3>
-                    <a href="https://www.youtube.com/watch?v=70d9irlxiB4">Ver online</a>
+                    <a :href="actual_game.url">Ver online</a>
                 </div>
             </div>
             <div class="details-description">
                 <h3>Descripción:</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis labore odit, nobis laudantium quibusdam soluta laboriosam doloremque nesciunt aut odio ut assumenda rerum veniam ullam mollitia fugiat dolorem optio excepturi facilis dicta unde modi neque! Dolorum et fugiat adipisci atque debitis asperiores voluptas non repellendus, voluptatum nostrum perspiciatis. Quod, sint?</p>
+                <p>{{ actual_game.about }}</p>
             </div>
         </article>
     </main>
@@ -43,7 +43,17 @@
 </template>
 
 <script setup>
+    import { useGamesStore } from "../stores/games"
+    import { storeToRefs } from 'pinia';
+    import { onBeforeMount } from "vue";
 
+    const games = useGamesStore()
+    const { actual_game } = storeToRefs(games)
+    const { getGame } = games
+
+    onBeforeMount(() => {
+        getGame()
+    })
 </script>
 
 <style>

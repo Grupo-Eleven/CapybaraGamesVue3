@@ -38,7 +38,6 @@
 <script setup>
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
-    console.log('holi')
 
     const games = useGamesStore()
     const { games_list } = storeToRefs(games)
