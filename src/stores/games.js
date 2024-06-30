@@ -20,5 +20,5 @@ export const useGamesStore = defineStore('games', () => {
     }
     getGames()
 
-    return { url, getGames }
+    return { url, getGames, games_list }
 })

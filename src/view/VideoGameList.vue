@@ -20,40 +20,10 @@
         <h2>Lista de videojuegos</h2>
         <h3>Todos los videojuegos</h3>
         <ol class="game-list">
-            <li>
+            <li :key="game" v-for="(game, index) in games_list">
                 <a href="videogame.html?id=1">
                     <img src="/img/HZD_logo.jpg" alt="">
-                    <p>Primer videojuego</p>
-                </a>
-            </li>
-            <li>                
-                <a href="videogame.html?id=2">
-                    <img src="/img/celeste_logo.png" alt="">
-                    <p>Segundo videojuego</p>
-                </a>
-            </li>
-            <li>            
-                <a href="videogame.html?id=3">
-                    <img src="/img/Hollow_knight_logo.jpg" alt="">
-                    <p>Tercer videojuego</p>
-                </a>
-            </li>
-            <li>                
-                <a href="videogame.html?id=4">
-                    <img src="/img/Hollow_knight_logo.jpg" alt="">
-                    <p title="prueba">Cuarto videojuego con titulo largo</p>
-                </a>
-            </li>
-            <li>                
-                <a href="videogame.html?id=5">
-                    <img src="/img/Hollow_knight_logo.jpg" alt="">
-                    <p>Quinto videojuego</p>
-                </a>
-            </li>
-            <li class="add-new">                
-                <a href="new-videogame.html">
-                    <div></div>
-                    <p>Agregar nuevo</p>
+                    <p>{{ index }}{{ game }}</p>
                 </a>
             </li>
         </ol>
@@ -67,9 +37,11 @@
 
 <script setup>
     import { useGamesStore } from "../stores/games"
+    import { storeToRefs } from 'pinia';
     console.log('holi')
 
     const games = useGamesStore()
+    const { games_list } = storeToRefs(games)
     const { getGames } = games
 
     getGames()
