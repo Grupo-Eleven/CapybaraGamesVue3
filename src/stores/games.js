@@ -4,7 +4,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 
 // Declaro urls globales de APIS
-const url = process.env.VUE_APP_BASE_URL
+const url = 'https://a12bba12-b258-4707-b64c-9719a13b2b47-00-3d7rffcg997ll.kirk.replit.dev'
 
 const games_list = ref([])
 
