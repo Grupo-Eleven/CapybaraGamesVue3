@@ -20,11 +20,11 @@
         <h2>Lista de videojuegos</h2>
         <h3>Todos los videojuegos</h3>
         <ol class="game-list">
-            <li :key="game" v-for="(game, index) in games_list">
-                <a href="videogame.html?id=1">
-                    <img src="/img/HZD_logo.jpg" alt="">
-                    <p>{{ index }}{{ game }}</p>
-                </a>
+            <li :key="game" v-for="(game) in games_list">
+                <router-link :to="{ name: 'videogame', params: { id: game.id } }">
+                    <img :src="game.url" alt="">
+                    <p>{{ game.nombre }}</p>
+                </router-link>
             </li>
         </ol>
     </main>
