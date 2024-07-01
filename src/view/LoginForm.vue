@@ -22,10 +22,12 @@
 
     import { useGamesStore } from "../stores/games"
     import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
 
     const games = useGamesStore()
     const { url } = games
     
+    const router = useRouter()
 
     const user = ref({
         username: '',
@@ -44,8 +46,11 @@
                 }
             )
             console.log(response)
-            localStorage.setItem('token', response.data.token)
-            console.log(localStorage.getItem('token'))
+            if (response.data.auth == true) {
+                localStorage.setItem('token', response.data.token)
+                console.log(localStorage.getItem('token'))
+                router.push({ name: 'index' })
+            }
         } catch (error) {
             console.log(error)
         }
