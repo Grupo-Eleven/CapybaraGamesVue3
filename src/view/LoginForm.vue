@@ -34,7 +34,7 @@
 
     const login = async () => {
         try {
-            const response = await axios.get(`${url}/api/login`, user_data.value)
+            const response = await axios.post(`${url}/api/login`, user_data.value)
             console.log(response)
         } catch (error) {
             console.log(error)
