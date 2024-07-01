@@ -33,12 +33,14 @@
     import FooterComp from '../components/FooterComp.vue'
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
-    import { nextTick, onBeforeMount } from "vue";
+    import { nextTick, onBeforeMount } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
+    import axios from 'axios';
+
 
     const games = useGamesStore()
     const { actual_game } = storeToRefs(games)
-    const { getGame } = games
+    const { url, getGame } = games
 
     const route = useRoute()
 
@@ -56,7 +58,7 @@
         }
     }
 
-    const deleteGame = (id) => {
+    const deleteGame = async (id) => {
         try {
             const token = localStorage.getItem('token')
             if (!token) {
