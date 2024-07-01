@@ -46,7 +46,7 @@
     import axios from 'axios'
     import { storeToRefs } from 'pinia';
     import { useGamesStore } from "../stores/games"
-    import { onMounted, ref } from 'vue';
+    import { onMounted, ref, watch } from 'vue';
     import { useRouter, useRoute } from 'vue-router';
 
     const games = useGamesStore()
@@ -107,9 +107,11 @@
     // }
 
     onMounted(() => {
-        getGame(route.params.id)
         if(router.currentRoute.value.name == 'edit-videogame'){
-            game.value == actual_game.value
+            getGame(route.params.id)
+            watch(actual_game, () => {
+                game.value == actual_game.value
+            }, {deep: true})
         }
     })
 </script>
