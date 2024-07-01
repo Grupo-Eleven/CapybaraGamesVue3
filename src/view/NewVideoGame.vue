@@ -5,7 +5,7 @@
     </header>
     <main>
         <h2>Agregar videojuego</h2>
-        <form class="newgame-form" method="post">
+        <form class="newgame-form" method="post" enctype="multipart/form-data">
             <label for="title">Titulo<input type="text" id="title" name="title" placeholder="Nombre" v-model="game.nombre"></label> 
             <label for="description">Descripción<textarea id="description" name="description" placeholder="Descripción" v-model="game.about"></textarea></label>
             <ul id="platform">
