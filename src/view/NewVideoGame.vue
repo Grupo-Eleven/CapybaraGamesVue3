@@ -108,9 +108,11 @@
 
     onMounted(() => {
         if(router.currentRoute.value.name == 'edit-videogame'){
+            console.log('Estoy editando')
             getGame(route.params.id)
             watch(actual_game, () => {
                 game.value == actual_game.value
+                console.log('Ejecuto watch')
             }, {deep: true})
         }
     })
