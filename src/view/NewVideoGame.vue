@@ -47,6 +47,7 @@
     import axios from 'axios'
 
     import { useGamesStore } from "../stores/games"
+    import { ref } from 'vue';
 
     const games = useGamesStore()
     const { url } = games
