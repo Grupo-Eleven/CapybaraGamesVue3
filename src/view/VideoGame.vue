@@ -5,7 +5,7 @@
     </header>
     <main v-if="actual_game">
         <h2>{{ actual_game.nombre }}</h2>
-        <button type="button" @click="editGame(actual_game.id)" v-if="token">EDITAR VIDEOJUEGO</button>
+        <button type="button" @click="router.push({ name: 'edit-videogame' , params: { id: actual_game_game.id }})" v-if="token">EDITAR VIDEOJUEGO</button>
         <article class="details-videogame">
             <div class="details-img">
                 <img src="/img/celeste_logo.png" alt="">
@@ -49,25 +49,6 @@
     let token = localStorage.getItem('token')
     console.log(token)
     console.log('token:')
-
-    const editGame = async (id) => {
-        try {
-            const token = localStorage.getItem('token')
-            if (!token) {
-                throw new Error('Token no encontrado')
-            }
-            const response = await axios.put(`${url}/api/game/${id}`, actual_game.value, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            console.log(response)
-            router.push({ name: 'videogame', params: { id: response.data.id } })
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     const deleteGame = async (id) => {
         try {

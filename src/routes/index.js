@@ -24,6 +24,11 @@ const routes = [
     component: NewVideoGame
   },
   {
+    path: '/edit-videogame/:id',
+    name: 'edit-videogame',
+    component: NewVideoGame
+  },
+  {
     path: '/videogame/:id',
     name: 'videogame',
     component: VideoGame

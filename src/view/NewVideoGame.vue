@@ -44,13 +44,14 @@
     import NavAside from '../components/NavAside.vue'
     import FooterComp from '../components/FooterComp.vue'
     import axios from 'axios'
-
+    import { storeToRefs } from 'pinia';
     import { useGamesStore } from "../stores/games"
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import { useRouter } from 'vue-router';
 
     const games = useGamesStore()
-    const { url } = games
+    const { actual_game } = storeToRefs(games)
+    const { url, getGame } = games
 
     const router = useRouter()
 
@@ -84,6 +85,32 @@
             console.log(error)
         }
     }
+
+    // const editGame = async (id) => {
+    //     try {
+    //         const token = localStorage.getItem('token')
+    //         if (!token) {
+    //             throw new Error('Token no encontrado')
+    //         }
+    //         const response = await axios.put(`${url}/api/game/${id}`, actual_game.value, {
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //         console.log(response)
+    //         router.push({ name: 'videogame', params: { id: response.data.id } })
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
+    onMounted(() => {
+        getGame(router.params.id)
+        if(router.currentRoute.value.name == 'edit-videogame'){
+            game.value == actual_game.value
+        }
+    })
 </script>
 
 <style>
