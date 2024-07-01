@@ -52,7 +52,18 @@
 
     const editGame = (id) => {
         try {
-            console.log(id)
+            const token = localStorage.getItem('token')
+            if (!token) {
+                throw new Error('Token no encontrado')
+            }
+            const response = await axios.put(`${url}/api/game`, actual_game.value, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            console.log(response)
+            router.push({ name: 'videogame', params: { id: response.data.id } })
         } catch (error) {
             console.log(error)
         }
