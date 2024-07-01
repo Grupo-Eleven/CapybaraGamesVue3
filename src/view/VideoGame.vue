@@ -50,13 +50,13 @@
     console.log(token)
     console.log('token:')
 
-    const editGame = (id) => {
+    const editGame = async (id) => {
         try {
             const token = localStorage.getItem('token')
             if (!token) {
                 throw new Error('Token no encontrado')
             }
-            const response = await axios.put(`${url}/api/game`, actual_game.value, {
+            const response = await axios.put(`${url}/api/game/${id}`, actual_game.value, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
