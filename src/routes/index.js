@@ -4,6 +4,7 @@ import Index from '../view/HomeIndex.vue'
 import VideoGameList from '../view/VideoGameList.vue'
 import VideoGame from '../view/VideoGame.vue'
 import ContactForm from '../view/ContactForm.vue'
+import LoginForm from '../view/LoginForm.vue'
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: '/videogame/:id',
     name: 'videogame',
     component: VideoGame
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginForm
   },
   {
     path: '/contact',

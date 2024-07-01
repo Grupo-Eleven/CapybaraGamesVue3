@@ -28,7 +28,7 @@
             <label for="url">URL de trailer<input type="url" id="url" name="url" placeholder="https://example.com"></label> 
             <div class="submit-button">
                 <label for="new-videogame-submit" class="submit-label-button">ENVIAR</label>
-                <button style="display: none;" id="new-videogame-submit" type="submit" value="Submit"></button>
+                <button style="display: none;" id="new-videogame-submit" type="submit" value="Submit" @click="postGame()"></button>
             </div>
         </form>
     </main>
@@ -38,6 +38,21 @@
 <script setup>
     import NavAside from '../components/NavAside.vue'
     import FooterComp from '../components/FooterComp.vue'
+    import axios from 'axios'
+
+    import { useGamesStore } from "../stores/games"
+
+    const games = useGamesStore()
+    const { url } = games
+
+    const postGame = async () => {
+        try {
+            const response = await axios.post(`${url}/api/game`, )
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 </script>
 
 <style>
