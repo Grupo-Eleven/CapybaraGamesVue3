@@ -31,10 +31,13 @@
                 <option value="1">Si</option>
                 <option value="0">No</option>
             </select></label>
-            <div class="submit-button">
-                <label for="new-videogame-submit" class="submit-label-button">ENVIAR</label>
-                <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()" v-if="router.currentRoute.value.name == 'new-videogame'"></button>
-                <button style="display: none;" id="new-videogame-submit" type="button" @click="editGame(game.id)" v-if="router.currentRoute.value.name == 'edit-videogame'"></button>
+            <div class="submit-button" v-if="router.currentRoute.value.name == 'new-videogame'">
+                <label for="new-videogame-submit" class="submit-label-button">CREAR</label>
+                <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()"></button>
+            </div>
+            <div class="submit-button" v-else-if="router.currentRoute.value.name == 'edit-videogame'">
+                <label for="new-videogame-submit" class="submit-label-button">EDITAR</label>
+                <button style="display: none;" id="new-videogame-submit" type="button" @click="editGame(game.id)"></button>
             </div>
         </form>
     </main>
