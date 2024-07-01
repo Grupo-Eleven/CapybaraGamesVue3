@@ -111,7 +111,7 @@
             console.log('Estoy editando')
             getGame(route.params.id)
             watch(actual_game, () => {
-                game.value == actual_game.value
+                game.value = actual_game.value
                 console.log('Ejecuto watch')
                 console.log(game.value)
                 console.log(actual_game.value)
