@@ -29,6 +29,7 @@
     import FooterComp from '../components/FooterComp.vue'
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
+    import { ref } from 'vue';
 
     const games = useGamesStore()
     const { games_list } = storeToRefs(games)
