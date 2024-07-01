@@ -5,6 +5,7 @@
     </header>
     <main v-if="actual_game">
         <h2>{{ actual_game.nombre }}</h2>
+        <button type="button" @click="editGame(actual_game.id)" v-if="token">EDITAR VIDEOJUEGO</button>
         <article class="details-videogame">
             <div class="details-img">
                 <img src="/img/celeste_logo.png" alt="">
@@ -21,6 +22,7 @@
                 <h3>Descripción:</h3>
                 <p>{{ actual_game.about }}</p>
             </div>
+            <button type="button" @click="deleteGame(actual_game.id)" v-if="token">Eliminar Videojuego - (¡¡¡SIN CONFIRMACION!!!)</button>
         </article>
     </main>
     <FooterComp />
@@ -32,13 +34,46 @@
     import { useGamesStore } from "../stores/games"
     import { storeToRefs } from 'pinia';
     import { nextTick, onBeforeMount } from "vue";
-    import { useRoute } from "vue-router";
+    import { useRoute, useRouter } from 'vue-router';
 
     const games = useGamesStore()
     const { actual_game } = storeToRefs(games)
     const { getGame } = games
 
     const route = useRoute()
+
+    const router = useRouter()
+
+    let token = localStorage.getItem('token')
+    console.log(token)
+    console.log('token:')
+
+    const editGame = (id) => {
+        try {
+            console.log(id)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const deleteGame = (id) => {
+        try {
+            const token = localStorage.getItem('token')
+            if (!token) {
+                throw new Error('Token no encontrado')
+            }
+            const response = await axios.delete(`${url}/api/game/${id}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            console.log(response)
+            router.push({ name: 'videogames-list' })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     onBeforeMount(() => {
         getGame(route.params.id)

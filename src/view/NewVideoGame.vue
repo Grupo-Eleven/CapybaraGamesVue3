@@ -36,7 +36,6 @@
                 <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()"></button>
             </div>
         </form>
-        {{ game }}
     </main>
     <FooterComp />
 </template>
@@ -48,9 +47,12 @@
 
     import { useGamesStore } from "../stores/games"
     import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
 
     const games = useGamesStore()
     const { url } = games
+
+    const router = useRouter()
 
     const game = ref({
         nombre: '',
@@ -75,6 +77,9 @@
                 }
             })
             console.log(response)
+            if (response.status == 201) {
+                router.push({ name: 'videogame', params: { id: response.data.id } })
+            }
         } catch (error) {
             console.log(error)
         }
