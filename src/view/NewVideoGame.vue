@@ -5,7 +5,7 @@
     </header>
     <main>
         <h2>Agregar videojuego</h2>
-        <form class="newgame-form" method="post" onsubmit="addNewVideogame(event)">
+        <form class="newgame-form" method="post">
             <label for="title">Titulo<input type="text" id="title" name="title" placeholder="Nombre" v-model="game.nombre"></label> 
             <label for="description">Descripción<textarea id="description" name="description" placeholder="Descripción" v-model="game.about"></textarea></label>
             <ul id="platform">
@@ -33,7 +33,7 @@
             </select></label>
             <div class="submit-button">
                 <label for="new-videogame-submit" class="submit-label-button">ENVIAR</label>
-                <button style="display: none;" id="new-videogame-submit" type="submit" value="Submit" @click="postGame()"></button>
+                <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()"></button>
             </div>
         </form>
         {{ game }}
