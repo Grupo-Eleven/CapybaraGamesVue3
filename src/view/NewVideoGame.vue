@@ -63,7 +63,16 @@
 
     const postGame = async () => {
         try {
-            const response = await axios.post(`${url}/api/game`, )
+            const token = localStorage.getItem('token')
+            if (!token) {
+                throw new Error('Token no encontrado')
+            }
+            const response = await axios.post(`${url}/api/game`, game.value, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             console.log(response)
         } catch (error) {
             console.log(error)
