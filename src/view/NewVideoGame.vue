@@ -10,10 +10,10 @@
             <label for="description">Descripción<textarea id="description" name="description" placeholder="Descripción" v-model="game.about"></textarea></label>
             <ul id="platform">
                 <li>Crossplay</li>
-                <li><input type="radio" id="mobile" name="mobile" value="1" v-model="game.plataforma">
-                <label for="mobile">Mobile</label></li>
-                <li><input type="radio" id="desktop" name="desktop" value="2" v-model="game.plataforma">
+                <li><input type="radio" id="desktop" name="desktop" value="1" v-model="game.plataforma">
                 <label for="desktop">Escritorio</label></li>
+                <li><input type="radio" id="mobile" name="mobile" value="2" v-model="game.plataforma">
+                <label for="mobile">Mobile</label></li>
                 <li><input type="radio" id="multiplatform" name="multiplatform" value="3" v-model="game.plataforma">
                 <label for="multiplatform">Multiplatforma</label></li>
             </ul> 
