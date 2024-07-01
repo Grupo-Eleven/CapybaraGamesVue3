@@ -47,12 +47,13 @@
     import { storeToRefs } from 'pinia';
     import { useGamesStore } from "../stores/games"
     import { onMounted, ref } from 'vue';
-    import { useRouter } from 'vue-router';
+    import { useRouter, useRoute } from 'vue-router';
 
     const games = useGamesStore()
     const { actual_game } = storeToRefs(games)
     const { url, getGame } = games
 
+    const route = useRoute()
     const router = useRouter()
 
     const game = ref({
@@ -106,7 +107,7 @@
     // }
 
     onMounted(() => {
-        getGame(router.params.id)
+        getGame(route.params.id)
         if(router.currentRoute.value.name == 'edit-videogame'){
             game.value == actual_game.value
         }
