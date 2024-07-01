@@ -38,6 +38,7 @@
 
     let token = localStorage.getItem('token')
     console.log(token)
+    console.log('token:')
 
 </script>
 
