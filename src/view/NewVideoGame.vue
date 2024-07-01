@@ -33,7 +33,8 @@
             </select></label>
             <div class="submit-button">
                 <label for="new-videogame-submit" class="submit-label-button">ENVIAR</label>
-                <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()"></button>
+                <button style="display: none;" id="new-videogame-submit" type="button" @click="postGame()" v-if="router.currentRoute.value.name == 'new-videogame'"></button>
+                <button style="display: none;" id="new-videogame-submit" type="button" @click="editGame(game.id)" v-if="router.currentRoute.value.name == 'edit-videogame'"></button>
             </div>
         </form>
     </main>
@@ -87,24 +88,24 @@
         }
     }
 
-    // const editGame = async (id) => {
-    //     try {
-    //         const token = localStorage.getItem('token')
-    //         if (!token) {
-    //             throw new Error('Token no encontrado')
-    //         }
-    //         const response = await axios.put(`${url}/api/game/${id}`, actual_game.value, {
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 'Authorization': `Bearer ${token}`
-    //             }
-    //         })
-    //         console.log(response)
-    //         router.push({ name: 'videogame', params: { id: response.data.id } })
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
+    const editGame = async (id) => {
+        try {
+            const token = localStorage.getItem('token')
+            if (!token) {
+                throw new Error('Token no encontrado')
+            }
+            const response = await axios.put(`${url}/api/game/${id}`, actual_game.value, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            console.log(response)
+            router.push({ name: 'videogame', params: { id: response.data.id } })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     onMounted(() => {
         if(router.currentRoute.value.name == 'edit-videogame'){
