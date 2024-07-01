@@ -10,26 +10,26 @@
             <label for="description">Descripción<textarea id="description" name="description" placeholder="Descripción" v-model="game.about"></textarea></label>
             <ul id="platform">
                 <li>Crossplay</li>
-                <li><input type="radio" id="desktop" name="desktop" value="1" v-model="game.plataforma">
+                <li><input type="radio" id="desktop" name="desktop" :value="1" v-model="game.plataforma">
                 <label for="desktop">Escritorio</label></li>
-                <li><input type="radio" id="mobile" name="mobile" value="2" v-model="game.plataforma">
+                <li><input type="radio" id="mobile" name="mobile" :value="2" v-model="game.plataforma">
                 <label for="mobile">Mobile</label></li>
-                <li><input type="radio" id="multiplatform" name="multiplatform" value="3" v-model="game.plataforma">
+                <li><input type="radio" id="multiplatform" name="multiplatform" :value="3" v-model="game.plataforma">
                 <label for="multiplatform">Multiplatforma</label></li>
             </ul> 
             <label for="category">Categoría<select id="category" name="category" v-model="game.categoria">
                 <option value="">Elige una categoría.</option>
-                <option value="1">Plataformas</option>
-                <option value="2">Mundo abierto</option>
-                <option value="3">2D</option>
-                <option value="4">3D</option>
+                <option :value="1">Plataformas</option>
+                <option :value="2">Mundo abierto</option>
+                <option :value="3">2D</option>
+                <option :value="4">3D</option>
             </select></label>
             <label for="image">Imagen<input type="file" id="image" name="image"></label> 
             <label for="url">URL de trailer<input type="url" id="url" name="url" placeholder="https://example.com" v-model="game.url"></label> 
             <label for="category">Sección Home<select id="home" name="home" v-model="game.home">
                 <option value="">Elige una opción.</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
+                <option :value="1">Si</option>
+                <option :value="0">No</option>
             </select></label>
             <div class="submit-button" v-if="router.currentRoute.value.name == 'new-videogame'">
                 <label for="new-videogame-submit" class="submit-label-button">CREAR</label>
