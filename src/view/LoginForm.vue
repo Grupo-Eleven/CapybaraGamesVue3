@@ -6,9 +6,9 @@
     <main>
         <h2>Contacto</h2>
         <form class="contact-form" method="post" onsubmit="sendContactForm(event)">
-            <label for="name">Usuario:<input type="text" id="user" name="user" v-model="user_data.user"></label> 
-            <label for="email">Contraseña:<input type="password" id="password" name="password" v-model="user_data.password"></label>
-            <button type="button" @click="login()">Enviar</button>
+            <label for="name">Usuario:<input type="text" id="user" name="user" v-model="user.username"></label> 
+            <label for="email">Contraseña:<input type="password" id="password" name="password" v-model="user.password"></label>
+            <button type="button" @click="login(user.username, user.password)">Enviar</button>
         </form>
         {{ user_data }}
     </main>
@@ -27,14 +27,22 @@
     const { url } = games
     
 
-    const user_data = ref({
-        user: '',
+    const user = ref({
+        username: '',
         password: ''
     })
 
-    const login = async () => {
+    const login = async (username, password) => {
         try {
-            const response = await axios.post(`${url}/api/login`, user_data.value)
+            const response = await axios.post(`${url}/api/login`,
+                { user: username, password },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }
+            )
             console.log(response)
         } catch (error) {
             console.log(error)
