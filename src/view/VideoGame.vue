@@ -5,7 +5,7 @@
     </header>
     <main v-if="actual_game">
         <h2>{{ actual_game.nombre }}</h2>
-        <button type="button" @click="router.push({ name: 'edit-videogame' , params: { id: actual_game_game.id }})" v-if="token">EDITAR VIDEOJUEGO</button>
+        <button type="button" @click="router.push({ name: 'edit-videogame' , params: { id: actual_game.id }})" v-if="token">EDITAR VIDEOJUEGO</button>
         <article class="details-videogame">
             <div class="details-img">
                 <img src="/img/celeste_logo.png" alt="">
