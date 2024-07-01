@@ -66,6 +66,10 @@ main h3 {
     font-size: 24px;
 }
 
+main article p {
+    text-align: start;
+}
+
 footer {
     margin-top: 75px;
     padding-top: 25px;
