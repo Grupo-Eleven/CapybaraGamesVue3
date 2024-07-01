@@ -13,6 +13,12 @@
                     <p>{{ game.nombre }}</p>
                 </router-link>
             </li>
+            <li class="add-new" v-if="token">                
+                <router-link :to="{ name: 'new-videogame' }">
+                    <div></div>
+                    <p>Agregar nuevo</p>
+                </router-link>
+            </li>
         </ol>
     </main>
     <FooterComp />
@@ -29,6 +35,10 @@
     const { getGames } = games
 
     getGames()
+
+    let token = localStorage.getItem('token')
+    console.log(token)
+
 </script>
 
 <style>
