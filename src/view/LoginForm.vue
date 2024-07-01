@@ -10,7 +10,7 @@
             <label for="email">Contraseña:<input type="password" id="password" name="password" v-model="user.password"></label>
             <button type="button" @click="login(user.username, user.password)">Enviar</button>
         </form>
-        {{ user_data }}
+        {{ user }}
     </main>
     <FooterComp />
 </template>
