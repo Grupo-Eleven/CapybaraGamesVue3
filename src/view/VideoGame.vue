@@ -13,7 +13,7 @@
                     <h3>Categoría:</h3>
                     <p>{{ actual_game.categoria }}</p>
                     <h3>Plataforma:</h3>
-                    <p>{{ actual_game.plataforma }}</p>
+                    <p>{{ actual_game.plataforma_nombre }}</p>
                     <h3>Trailer:</h3>
                     <a :href="actual_game.url">Ver online</a>
                 </div>
