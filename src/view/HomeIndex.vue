@@ -6,18 +6,18 @@
     <main>
         <h2>Home</h2>
         <div class="galery">
-            <a href="videogame.html"><img src="/img/HZD_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/celeste_logo.png" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/HZD_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/celeste_logo.png" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/celeste_logo.png" alt=""></a>
         </div>
         <div class="slider">
-            <a href="videogame.html"><img src="/img/HZD_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/celeste_logo.png" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
-            <a href="videogame.html"><img src="/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/HZD_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/celeste_logo.png" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/Hollow_knight_logo.jpg" alt=""></a>
+            <a href="videogame.html"><img src="../assets/img/celeste_logo.png" alt=""></a>
         </div>
         <article>
             <h2>About us</h2>
