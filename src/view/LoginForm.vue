@@ -4,7 +4,7 @@
         <NavAside />
     </header>
     <main>
-        <h2>Contacto</h2>
+        <h2>Ingresar</h2>
         <form class="contact-form" method="post" onsubmit="sendContactForm(event)">
             <label for="name">Usuario:<input type="text" id="user" name="user" v-model="user.username"></label> 
             <label for="email">Contraseña:<input type="password" id="password" name="password" v-model="user.password"></label>
