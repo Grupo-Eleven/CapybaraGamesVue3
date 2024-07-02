@@ -30,11 +30,12 @@ main {
     background-color: #100E0E;
     width: 100%;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 5px;
     /* width: 98vw; */
-    max-width: 98.5vw;
-    border-radius: 5px;
-    box-shadow: inset var(--light-brown) -10px 10px 15px -12px;
+    max-width: 93vw;
+    border-radius: 10px;
+    /* box-shadow: inset var(--light-brown) -10px 10px 15px -12px; */
     justify-content: center;
     animation: fadeIn 1s;
 }
@@ -43,7 +44,6 @@ p {
     color: var(--beige);
 }
 
-
 header h1 {
     background:#100e0e ; 
     background-color: #100E0E;
@@ -51,10 +51,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed;
 background-repeat: no-repeat;
 background-size: cover;
-    text-shadow: #036353 3px 0px 4px;
+    /* text-shadow: #036353 3px 0px 4px; */
     font-weight: 700;
     font-size: 48px;
-    color:#100e0e;
+    color:var(--light-brown);
     border:groove var(--light-brown);
     border-top:none;
     border-radius: 3.5px;
@@ -62,7 +62,9 @@ background-size: cover;
     box-shadow: var(--light-brown) 10px 10px 15px -12px;
     padding-right: 15px;
     padding-left: 15px;
+    padding-bottom: 5px ;
     margin: 0px;
+    margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
@@ -82,6 +84,7 @@ main h3 {
 
 main article p {
     text-align: start;
+    padding: 50px;
 }
 
 
